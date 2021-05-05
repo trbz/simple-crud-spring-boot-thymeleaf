@@ -1,9 +1,6 @@
 package com.crud.springboot.thymeleaf.controller;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,7 +31,7 @@ public class EmployeeController {
 		
 		theModel.addAttribute("employees", theEmployees); 
 		
-		return "list-employees";
+		return "employees/list-employees";
 	}
 	
 }

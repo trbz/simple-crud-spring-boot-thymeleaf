@@ -18,6 +18,7 @@ import lombok.ToString;
 @Table(name = "employee")
 public class Employee {
 
+	// == fields ==
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -32,6 +33,8 @@ public class Employee {
 	@Column(name = "email")
 	private String email;
 
+	
+	// == constructors ==
 	public Employee() {
 	}
 
@@ -39,15 +42,5 @@ public class Employee {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-	}
-
-	public Employee(int id, String firstName, String lastName, String email) {
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-	}
-	
-	
-	
+	}	
 }
