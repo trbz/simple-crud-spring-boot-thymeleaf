@@ -1,4 +1,4 @@
-package com.luv2code.springboot.thymeleafdemo.controller;
+package com.crud.springboot.thymeleaf.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.luv2code.springboot.thymeleafdemo.entity.Employee;
-import com.luv2code.springboot.thymeleafdemo.service.EmployeeService;
+import com.crud.springboot.thymeleaf.entity.Employee;
+import com.crud.springboot.thymeleaf.service.EmployeeService;
 
 @Controller
 @RequestMapping("/employees")
