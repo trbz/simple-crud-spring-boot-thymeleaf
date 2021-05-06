@@ -8,3 +8,7 @@ Features:
 -Show employees list
 
 -Add employee
+
+-Update employee
+
+-Delete employee
