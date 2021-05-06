@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.crud.springboot.thymeleaf.entity.Employee;
 import com.crud.springboot.thymeleaf.service.EmployeeService;
@@ -44,7 +45,7 @@ public class EmployeeController {
 		
 		theModel.addAttribute("employee", theEmployee);
 		
-		return "employees/employee-add-form";
+		return "employees/employee-form";
 	}
 	
 	// == save employee ==
@@ -54,6 +55,28 @@ public class EmployeeController {
 		employeeService.save(theEmployee);
 		
 		// use redirect to prevent duplicate submissions
+		return "redirect:/employees/list";
+	}
+	
+	// == show update form ==
+	@GetMapping("/updateForm")
+	public String updateForm(@RequestParam("employeeId") int theId,
+			Model theModel) {
+		
+		Employee theEmployee = employeeService.findById(theId);
+		
+		theModel.addAttribute("employee", theEmployee);
+		
+		return "employees/employee-form";
+	}
+	
+	// == delete employee ==
+	@GetMapping("/delete")
+	public String deleteEmployee(@RequestParam("employeeId") int theId,
+			Model theModel) {
+		
+		employeeService.deleteById(theId);
+		
 		return "redirect:/employees/list";
 	}
 	
