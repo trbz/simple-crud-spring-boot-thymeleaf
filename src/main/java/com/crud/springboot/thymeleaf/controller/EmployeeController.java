@@ -18,6 +18,8 @@ import com.crud.springboot.thymeleaf.service.EmployeeService;
 @RequestMapping("/employees")
 public class EmployeeController {
 
+	// CONTROLLERADVICE!!!
+	
 	private EmployeeService employeeService;
 
 	// == dependency injection ==
@@ -80,5 +82,17 @@ public class EmployeeController {
 		return "redirect:/employees/list";
 	}
 	
+	// == search employee ==
+	@GetMapping("/search")
+	public String delete(@RequestParam("employeeName") String theName,
+						 Model theModel) {
+		
+		List<Employee> theEmployees = employeeService.searchBy(theName);
+
+		theModel.addAttribute("employees", theEmployees);
+		
+		return "/employees/list-employees";
+		
+	}
 	
 }

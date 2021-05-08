@@ -16,18 +16,34 @@
 	
 		<h1 class="fw-bold">Employee Management System</h1>
 		<hr>
-				
-		<!-- Add employee button-->
+
+		<!-- Logout -->
+		<form action="#" th:action="@{/logout}" 
+				   method="POST">
+		
+			<input type="submit" value="Logout" class="btn btn-outline-dark btn-sm float-end mb-3" />
+		</form>
+		
+		<!-- Add employee-->
 		<a th:href="@{/employees/addForm}"
 			 class="btn btn-outline-dark btn-lg mb-3">
 			Add Employee
 		</a>
-		
-			<h3 class="bg-dark rounded
-				text-center fw-bold font-monospace text-white">
-					Employees List</h3>
 
-		<!-- Show list of employees -->
+		<!-- Search employee-->
+		<form th:action="@{/employees/search}" class="form-inline">
+			
+			<input class="form-control ml-5 mr-sm-2 mb-3" type="search" name="employeeName" placeholder="Search by name" />
+
+			<button class="btn btn-outline-dark btn-lg mb-3" type="submit">Search</button>
+	
+	    </form>	
+			
+		<h3 class="bg-dark rounded
+			text-center fw-bold font-monospace text-white">
+				Employees List</h3>
+
+		<!-- List of employees -->
 		<table class="table table-light table-bordered table-striped">
 		
 			<thead class="table-dark">
@@ -51,6 +67,7 @@
 						   Update
 						</a>
 						
+						<!-- Delete employee-->
 	 					<a th:href="@{/employees/delete(employeeId=${tempEmployee.id})}"
 							class="btn btn-outline-danger btn-sm"
 							onClick="if (!(confirm('Are you sure you want to delete this employee?'))) return false">
@@ -59,7 +76,6 @@
 					</td>
 				</tr>
 			</tbody>
-			
 		</table>
 	</div>
 </body>
