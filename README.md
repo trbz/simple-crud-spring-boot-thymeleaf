@@ -1,14 +1,19 @@
 # simple-crud-spring-boot-thymeleaf
+
+EMPLOYEE MANAGEMENT SYSTEM
+
 Simple CRUD with Login &amp; Registration in Spring and Thymeleaf 
 
 Used DB: PostgreSQL
 
 Features:
 
--Show employees list
+*Show employee list
 
--Add employee
+*Add employee
 
--Update employee
+*Update employee
 
--Delete employee
+*Delete employee
+
+*Login
