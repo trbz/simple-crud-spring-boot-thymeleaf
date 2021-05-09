@@ -14,19 +14,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.crud.springboot.thymeleaf.entity.Employee;
 import com.crud.springboot.thymeleaf.service.EmployeeService;
 
+import lombok.RequiredArgsConstructor;
+
 @Controller
 @RequestMapping("/employees")
+@RequiredArgsConstructor
 public class EmployeeController {
 
 	// CONTROLLERADVICE!!!
 	
-	private EmployeeService employeeService;
-
-	// == dependency injection ==
-	@Autowired
-	public EmployeeController(EmployeeService employeeService) {
-		this.employeeService = employeeService;
-	}
+	private final EmployeeService employeeService;
 
 	// == show list of employees ==
 	@GetMapping("/list")

@@ -8,16 +8,14 @@ import org.springframework.stereotype.Service;
 import com.crud.springboot.thymeleaf.dao.EmployeeRepository;
 import com.crud.springboot.thymeleaf.entity.Employee;
 
+import lombok.RequiredArgsConstructor;
+
 
 @Service
+@RequiredArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
 
-	private EmployeeRepository employeeRepository;
-
-	@Autowired
-	public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
-		this.employeeRepository = employeeRepository;
-	}
+	private final EmployeeRepository employeeRepository;
 
 	@Override
 	public List<Employee> findAll() {
