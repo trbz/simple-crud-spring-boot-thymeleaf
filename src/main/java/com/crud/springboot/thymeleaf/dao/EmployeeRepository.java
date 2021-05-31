@@ -8,9 +8,9 @@ import com.crud.springboot.thymeleaf.entity.Employee;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
-	public List<Employee> findAllByOrderByLastNameAsc();
+	List<Employee> findAllByOrderByLastNameAsc();
 
-	public List<Employee> 
+	List<Employee>
 	findByFirstNameContainsOrLastNameContainsAllIgnoreCaseOrderByLastNameAsc(
 			String firstName, String lastName);
 }

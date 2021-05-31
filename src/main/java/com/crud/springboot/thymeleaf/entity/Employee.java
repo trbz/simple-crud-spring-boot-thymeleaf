@@ -15,7 +15,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name = "employee")
+@Table(name = "employee", schema = "public")
 public class Employee {
 
 	// == fields ==
@@ -30,7 +30,7 @@ public class Employee {
 	@Column(name = "last_name")
 	private String lastName; 
 	
-	@Column(name = "email")
+	@Column(name = "email", unique = true)
 	private String email;
 
 	
