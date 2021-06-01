@@ -11,5 +11,4 @@ public class StartCRUDApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(StartCRUDApplication.class, args);
 	}
-
 }

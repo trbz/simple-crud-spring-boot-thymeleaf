@@ -23,12 +23,19 @@
 		
 			<input type="submit" value="Logout" class="btn btn-outline-dark btn-sm float-end mb-3" />
 		</form>
-		
+
 		<!-- Add employee-->
 		<a th:href="@{/employees/addForm}"
 			 class="btn btn-outline-dark btn-lg mb-3">
-			Add Employee
+			Add employee
 		</a>
+
+		<!-- User management-->
+		<a th:href="@{/users/list}"
+		   class="btn btn-outline-dark btn-lg mb-3 " style="margin-left: 20px">
+			User management
+		</a>
+
 
 		<!-- Search employee-->
 		<form th:action="@{/employees/search}" class="form-inline col-md-4 col-md-offset-1 col-md-6 col-sm-offset-1">
