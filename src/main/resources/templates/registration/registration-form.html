@@ -17,18 +17,16 @@
 </head>
 <body>
 
-	<div>
+		<div class="container col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
 
-		<div id="loginbox" style="margin-top: 50px;"
-			class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
-			
-			<div class="panel panel-primary">
+			<div id="card" style="margin-top: 50px;"
+				 class="card border-dark">
 
-				<div class="panel-heading">
-					<div class="panel-title">Register New User</div>
+				<div class="card-header text-white bg-dark mb-3">
+					Employee Management System Registration
 				</div>
 
-				<div style="padding-top: 30px" class="panel-body">
+				<div style="padding-top: 15px" class="card-body">
 
 					<!-- Registration Form -->
 					<form th:action="@{/registration/processRegistrationForm}"
@@ -51,76 +49,76 @@
 
 						<!-- User name -->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
+							<span class="input-group-addon"><i class="fa fa-user fa-2x" style="margin-right: 7px"></i></span>
 							<input type="text" th:field="*{userName}" placeholder="username (*)" class="form-control" />
 						</div>
 
 						<div th:if="${#fields.hasErrors('userName')}"
 							style="margin-bottom: 25px" class="text-danger">
 							<ul>
-							  <li th:each="err : ${#fields.errors('userName')}" th:text="'User name ' + ${err}" />
+							  <li th:each="err : ${#fields.errors('userName')}" th:text="'User name - ' + ${err}"></li>
 							</ul>						
 						</div>
 						
 
 						<!-- Password -->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
+							<span class="input-group-addon"><i class="fa fa-lock fa-2x" style="margin-right: 7px"></i></span>
 							<input type="password" th:field="*{password}" placeholder="password (*)" class="form-control" th:errorclass="fieldError" />
 						</div>
 						<div th:if="${#fields.hasErrors('password')}"
 							style="margin-bottom: 25px" class="text-danger">
 							<ul>
-							  <li th:each="err : ${#fields.errors('password')}" th:text="'Password ' + ${err}" />
+							  <li th:each="err : ${#fields.errors('password')}" th:text="'Password - ' + ${err}"></li>
 							</ul>						
 						</div>
 						
 						<!-- Confirm Password -->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
+							<span class="input-group-addon"><i class="fa fa-lock fa-2x" style="margin-right: 7px"></i></span>
 							<input type="password" th:field="*{matchingPassword}" placeholder="confirm password (*)" class="form-control" th:errorclass="fieldError" />
 						</div>
 						<div th:if="${#fields.hasErrors('matchingPassword')}"
 							style="margin-bottom: 25px" class="text-danger">
 							<ul>
-							  <li th:each="err : ${#fields.errors('matchingPassword')}" th:text="'Password ' + ${err}" />
+							  <li th:each="err : ${#fields.errors('matchingPassword')}" th:text="'Password - ' + ${err}"></li>
 							</ul>						
 						</div>
 					
 						
 						<!-- First name -->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
+							<span class="input-group-addon"><i class="fa fa-user fa-2x" style="margin-right: 7px"></i></span>
 							<input type="text" th:field="*{firstName}" placeholder="first name (*)" class="form-control" th:errorclass="fieldError" />
 						</div>
 						<div th:if="${#fields.hasErrors('firstName')}"
 							style="margin-bottom: 25px" class="text-danger">
 							<ul>
-							  <li th:each="err : ${#fields.errors('firstName')}" th:text="'First name ' + ${err}" />
+							  <li th:each="err : ${#fields.errors('firstName')}" th:text="'First name - ' + ${err}"></li>
 							</ul>						
 						</div>
 						
 						<!-- Last name -->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
+							<span class="input-group-addon"><i class="fa fa-user fa-2x" style="margin-right: 7px"></i></span>
 							<input type="text" th:field="*{lastName}" placeholder="last name (*)" class="form-control" th:errorclass="fieldError" />
 						</div>
 						<div th:if="${#fields.hasErrors('lastName')}"
 							style="margin-bottom: 25px" class="text-danger">
 							<ul>
-							  <li th:each="err : ${#fields.errors('lastName')}" th:text="'Last name ' + ${err}" />
+							  <li th:each="err : ${#fields.errors('lastName')}" th:text="'Last name - ' + ${err}"></li>
 							</ul>						
 						</div>
 						
 						<!-- Email -->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
+							<span class="input-group-addon"><i class="fa fa-user fa-2x" style="margin-right: 7px"></i></span>
 							<input type="text" th:field="*{email}" placeholder="email (*)" class="form-control" th:errorclass="fieldError" />
 						</div>
 						<div th:if="${#fields.hasErrors('email')}"
 							style="margin-bottom: 25px" class="text-danger">
 							<ul>
-							  <li th:each="err : ${#fields.errors('email')}" th:text="'Email ' + ${err}" />
+							  <li th:each="err : ${#fields.errors('email')}" th:text="'Email - ' + ${err}"></li>
 							</ul>						
 						</div>
 						
@@ -128,7 +126,7 @@
 						<!-- Register Button -->
 						<div style="margin-top: 10px" class="form-group">						
 							<div class="col-sm-6 controls">
-								<button type="submit" class="btn btn-primary">Register</button>
+								<button type="submit" class="btn btn-outline-dark btn-lg">Register</button>
 							</div>
 						</div>
 						
@@ -138,9 +136,11 @@
 
 			</div>
 
+			<!-- Backlink -->
+			<div style="margin-top: 10px">
+				<a th:href="@{/}" class="btn btn-outline-primary btn-lg" role="button" aria-pressed="true">Back to Log In</a>
+			</div>
+
 		</div>
-
-	</div>
-
 </body>
 </html>

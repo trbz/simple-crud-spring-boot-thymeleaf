@@ -28,6 +28,7 @@ public class RegistrationController {
         dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
     }
 
+    //  == show registration form  ==
     @GetMapping("/showRegistrationForm")
     public String showRegistrationForm(Model theModel){
 
@@ -36,6 +37,7 @@ public class RegistrationController {
         return "registration/registration-form";
     }
 
+    // == process registration form and show confirmation if success ==
     @PostMapping("/processRegistrationForm")
     public String processRegistrationForm(
             @Valid @ModelAttribute("newSystemUser") NewSystemUser newSystemUser,

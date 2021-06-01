@@ -16,4 +16,8 @@ Features:
 
 *Delete employee
 
+*Authorities
+
 *Login
+
+*Registration

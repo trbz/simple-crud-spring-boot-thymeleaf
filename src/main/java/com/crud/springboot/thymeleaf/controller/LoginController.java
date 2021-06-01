@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LoginController {
 
+	// == show login  ==
 	@GetMapping("/showLoginPage")
 	public String showMyLoginPage() {
 		
@@ -13,6 +14,7 @@ public class LoginController {
 		
 	}
 
+	// == show access-denied form  ==
 	@GetMapping("/access-denied")
 	public String showAccessDenied() {
 		
