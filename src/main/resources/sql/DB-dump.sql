@@ -183,11 +183,11 @@ ALTER TABLE ONLY public."user" ALTER COLUMN id SET DEFAULT nextval('public.user_
 --
 
 COPY public.employee (id, first_name, last_name, email) FROM stdin;
-2	Emma	Baum	emma@luv2code.com
-3	Avani	Gup	avani@luv2code.com
-4	Yuri	Petrov	yuri@luv2code.com
-5	Juan	Vega	juan@luv2code.com
-7	Jan	Kowalski	jan@gmail.com
+1	Emma	Baum	emma@luv2code.com
+2	Avani	Gup	avani@luv2code.com
+3	Yuri	Petrov	yuri@luv2code.com
+4	Juan	Vega	juan@luv2code.com
+5	Jan	Kowalski	jan@gmail.com
 \.
 
 

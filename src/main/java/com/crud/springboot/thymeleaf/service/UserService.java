@@ -12,5 +12,11 @@ public interface UserService extends UserDetailsService {
 
     void save(NewSystemUser newSystemUser);
 
+    void savePermissions (User user);
+
     List<User> findAll();
+
+    User findById(int theId);
+
+    void deleteById(int theId);
 }

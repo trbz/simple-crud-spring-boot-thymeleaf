@@ -1,23 +1,26 @@
-# simple-crud-spring-boot-thymeleaf
+# :fa-user: EMPLOYEE MANAGEMENT SYSTEM
 
-EMPLOYEE MANAGEMENT SYSTEM
+#### Simple CRUD with Login &amp; Registration in Spring and Thymeleaf
 
-Simple CRUD with Login &amp; Registration in Spring and Thymeleaf 
 
-Used DB: PostgreSQL
 
-Features:
+**Used DB: **PostgreSQL
 
-*Show employee list
+**Login password (for already inserted users): **fun123
 
-*Add employee
+**Features:**
 
-*Update employee
+- Show employee list
 
-*Delete employee
+- Add employee
 
-*Authorities
+- Update employee
 
-*Login
+- Delete employee
 
-*Registration
+- Authorities (changeable permissions, delete system user)
+
+- Login
+
+- Registration 
+

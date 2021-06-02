@@ -7,6 +7,7 @@ import com.crud.springboot.thymeleaf.entity.Employee;
 import com.crud.springboot.thymeleaf.entity.Role;
 import com.crud.springboot.thymeleaf.entity.User;
 import com.crud.springboot.thymeleaf.user.NewSystemUser;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,25 +17,25 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
+
+import static java.util.Collections.singletonList;
 
 @Service
 public class UserServiceImpl implements UserService{
 
     @Autowired
-    private EmployeeRepository employeeRepository;
+    private  EmployeeRepository employeeRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    private  UserRepository userRepository;
 
     @Autowired
-    private RoleRepository roleRepository;
+    private  RoleRepository roleRepository;
 
     @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+    private  BCryptPasswordEncoder passwordEncoder;
 
     @Override
     public User findByUserName(String userName) {
@@ -58,12 +59,46 @@ public class UserServiceImpl implements UserService{
 
         userRepository.save(user);
         employeeRepository.save(employee);
-
     }
+
+    @Override
+    public void savePermissions(User user) {
+
+        Collection<Role> roles = user.getRoles();
+
+        if (roles == null || roles.isEmpty()){
+            user.setRoles(singletonList(roleRepository.findRoleByName("ROLE_EMPLOYEE")));
+        }
+        userRepository.save(user);
+    }
+
 
     @Override
     public List<User> findAll() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public void deleteById(int theId) {
+        userRepository.deleteById(theId);
+    }
+
+
+    @Override
+    public User findById(int theId) {
+
+        Optional<User> result = userRepository.findById(theId);
+
+        User theUser = null;
+
+        if (result.isPresent()) {
+            theUser = result.get();
+        } else {
+            // we didn't find the employee
+            throw new RuntimeException("Did not find employee id - " + theId);
+        }
+
+        return theUser;
     }
 
     @Override

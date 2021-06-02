@@ -17,7 +17,6 @@
 		<h1 class="fw-bold">Employee Management System</h1>
 		<hr>
 
-		<button type="submit" class="btn btn-outline-dark btn-lg col-3 mb-2">Save</button>
 		<a th:href="@{/employees/list}" class="btn btn-outline-dark btn-lg col-4 ml-4 mb-2 float-end" >Back to Home page</a>
 
 		<!-- List of users -->
@@ -41,14 +40,14 @@
 					</table>
 				</td>
 				<td>
-					<!-- Update user / NOT IMPLEMENTED-->
-					<a th:href="@{/}"
+					<!-- Update user -->
+					<a th:href="@{/users/updateForm(userId=${tempUser.id})}"
 					   class="btn btn-outline-dark btn-sm">
 						Update
 					</a>
 
-					<!-- Delete user / NOT IMPLEMENTED-->
-					<a th:href="@{/}"
+					<!-- Delete user -->
+					<a th:href="@{/users/delete(userId=${tempUser.id})}"
 					   class="btn btn-outline-danger btn-sm"
 					   onClick="if (!(confirm('Are you sure you want to delete this user?'))) return false">
 						Delete

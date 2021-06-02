@@ -68,8 +68,7 @@ public class EmployeeController {
 	
 	// == delete employee ==
 	@GetMapping("/delete")
-	public String deleteEmployee(@RequestParam("employeeId") int theId,
-			Model theModel) {
+	public String deleteEmployee(@RequestParam("employeeId") int theId) {
 		
 		employeeService.deleteById(theId);
 		
