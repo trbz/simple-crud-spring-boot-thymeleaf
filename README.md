@@ -1,12 +1,12 @@
-# :fa-user: EMPLOYEE MANAGEMENT SYSTEM
+# :office: EMPLOYEE MANAGEMENT SYSTEM
 
 #### Simple CRUD with Login &amp; Registration in Spring and Thymeleaf
+-----------------------------------------------------------------------------
 
+##### Used DB: *PostgreSQL*
 
-
-**Used DB: **PostgreSQL
-
-**Login password (for already inserted users): **fun123
+##### Login password (for already inserted users): *fun123*
+-----------------------------------------------------------------------------
 
 **Features:**
 
