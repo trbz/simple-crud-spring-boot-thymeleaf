@@ -4,7 +4,6 @@ import com.crud.springboot.thymeleaf.entity.User;
 import com.crud.springboot.thymeleaf.service.UserService;
 import com.crud.springboot.thymeleaf.user.NewSystemUser;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -66,5 +65,4 @@ public class RegistrationController {
 
         return "registration/registration-confirmation";
     }
-
 }

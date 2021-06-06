@@ -7,7 +7,6 @@ import com.crud.springboot.thymeleaf.entity.Employee;
 import com.crud.springboot.thymeleaf.entity.Role;
 import com.crud.springboot.thymeleaf.entity.User;
 import com.crud.springboot.thymeleaf.user.NewSystemUser;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,7 +16,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static java.util.Collections.singletonList;

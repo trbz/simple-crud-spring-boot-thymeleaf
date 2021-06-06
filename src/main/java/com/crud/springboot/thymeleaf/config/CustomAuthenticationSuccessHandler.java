@@ -16,7 +16,7 @@ import java.io.IOException;
 @Component
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
-    @Autowired
+	@Autowired
     private UserService userService;
 	
 	@Override
@@ -32,5 +32,4 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 
 		response.sendRedirect(request.getContextPath() + "/");
 	}
-
 }

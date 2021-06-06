@@ -1,10 +1,7 @@
 package com.crud.springboot.thymeleaf.config;
 
-import javax.sql.DataSource;
-
 import com.crud.springboot.thymeleaf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -18,10 +15,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-//	@Autowired
-//	@Qualifier("securityDataSource")
-//	private DataSource securityDataSource;
-
 	@Autowired
 	private UserService userService;
 
@@ -30,8 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		
-		//auth.jdbcAuthentication().dataSource(securityDataSource);
+
 		auth.authenticationProvider(authenticationProvider());
 	}
 
@@ -56,7 +48,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.logout().permitAll()
 			.and()
 			.exceptionHandling().accessDeniedPage("/access-denied");
-		
 	}
 
 	//bcrypt bean definition
@@ -73,7 +64,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.setPasswordEncoder(passwordEncoder()); //set the password encoder - bcrypt
 		return auth;
 	}
-		
 }
 
 
